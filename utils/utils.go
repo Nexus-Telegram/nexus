@@ -14,7 +14,6 @@ type QueryID struct {
 	Username  string `json:"username"`
 	FirstName string `json:"first_name"`
 	LastName  string `json:"last_name"`
-	// Include other fields if necessary
 }
 
 func MergeHeaders(commonHeaders map[string]string, queryIDheaders map[string]string) map[string]string {
@@ -34,7 +33,7 @@ func MergeHeaders(commonHeaders map[string]string, queryIDheaders map[string]str
 	return mergedHeaders
 }
 
-func parseQueryIDs() []string {
+func ParseQueryIDs() []string {
 	file, err := os.Open("query_ids.txt")
 	if err != nil {
 		log.Fatalf("Error opening file: %v", err)
@@ -65,7 +64,7 @@ func parseQueryIDs() []string {
 	return queryIDs
 }
 
-func extractFullName(queryString string) (string, error) {
+func ExtractFullName(queryString string) (string, error) {
 	// Parse the query string
 	parsedQuery, err := url.ParseQuery(queryString)
 	if err != nil {
