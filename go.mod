@@ -1,4 +1,4 @@
-module github.com/Nexus-Telegram/nexus
+module github.com/Nexus-Telegram/nexus-core
 
 go 1.23.3
 
